@@ -1,0 +1,485 @@
+2022-05-31 19:19:13,782 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 19:19:15,194 - Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: 0e9358b3fe19d38e426260a34641c9e9a737e6abb6ae17bb8bbf398a96ccc2f0 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer0.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer0.org1.example.com
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.getConfigBlock(Channel.java:858)
+	at org.hyperledger.fabric.sdk.Channel.parseConfigBlock(Channel.java:1781)
+	at org.hyperledger.fabric.sdk.Channel.loadCACertificates(Channel.java:1618)
+	at org.hyperledger.fabric.sdk.Channel.initialize(Channel.java:1107)
+	at cn.com.dhfabric.FabricClient.invoke(FabricClient.java:166)
+	at cn.com.dhfabric.DHChaincode.invoke(DHChaincode.java:47)
+	at cn.com.dhfabric.Communication.main(Communication.java:37)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer0.org1.example.com
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	... 3 more
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+2022-05-31 19:19:15,201 - getConfigBlock for channel mychannel failed with peer peer0.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: 0e9358b3fe19d38e426260a34641c9e9a737e6abb6ae17bb8bbf398a96ccc2f0 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer0.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+2022-05-31 19:19:15,205 - Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: 0e9358b3fe19d38e426260a34641c9e9a737e6abb6ae17bb8bbf398a96ccc2f0 to Peer{ id: 2, name: peer1.org1.example.com, channelName: mychannel, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer1.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer1.org1.example.com
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.getConfigBlock(Channel.java:858)
+	at org.hyperledger.fabric.sdk.Channel.parseConfigBlock(Channel.java:1781)
+	at org.hyperledger.fabric.sdk.Channel.loadCACertificates(Channel.java:1618)
+	at org.hyperledger.fabric.sdk.Channel.initialize(Channel.java:1107)
+	at cn.com.dhfabric.FabricClient.invoke(FabricClient.java:166)
+	at cn.com.dhfabric.DHChaincode.invoke(DHChaincode.java:47)
+	at cn.com.dhfabric.Communication.main(Communication.java:37)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer1.org1.example.com
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	... 3 more
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+2022-05-31 19:19:15,205 - getConfigBlock for channel mychannel failed with peer peer1.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: 0e9358b3fe19d38e426260a34641c9e9a737e6abb6ae17bb8bbf398a96ccc2f0 to Peer{ id: 2, name: peer1.org1.example.com, channelName: mychannel, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer1.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+2022-05-31 19:19:15,206 - getConfigBlock for channel mychannel failed with peer peer1.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: 0e9358b3fe19d38e426260a34641c9e9a737e6abb6ae17bb8bbf398a96ccc2f0 to Peer{ id: 2, name: peer1.org1.example.com, channelName: mychannel, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer1.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+org.hyperledger.fabric.sdk.exception.ProposalException: getConfigBlock for channel mychannel failed with peer peer1.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: 0e9358b3fe19d38e426260a34641c9e9a737e6abb6ae17bb8bbf398a96ccc2f0 to Peer{ id: 2, name: peer1.org1.example.com, channelName: mychannel, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer1.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+	at org.hyperledger.fabric.sdk.Channel.getConfigBlock(Channel.java:869)
+	at org.hyperledger.fabric.sdk.Channel.parseConfigBlock(Channel.java:1781)
+	at org.hyperledger.fabric.sdk.Channel.loadCACertificates(Channel.java:1618)
+	at org.hyperledger.fabric.sdk.Channel.initialize(Channel.java:1107)
+	at cn.com.dhfabric.FabricClient.invoke(FabricClient.java:166)
+	at cn.com.dhfabric.DHChaincode.invoke(DHChaincode.java:47)
+	at cn.com.dhfabric.Communication.main(Communication.java:37)
+2022-05-31 19:19:15,206 - Channel mychannel could not load peer CA certificates from any peers.
+2022-05-31 19:19:15,324 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 19:19:15,331 - Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: ace26a667f0c79dfea1be1b825a080290e0e0bcee28e5c9fd0fe0225d815b61e to Peer{ id: 2, name: peer1.org1.example.com, channelName: mychannel, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer1.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer1.org1.example.com
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.getConfigBlock(Channel.java:858)
+	at org.hyperledger.fabric.sdk.Channel.parseConfigBlock(Channel.java:1781)
+	at org.hyperledger.fabric.sdk.Channel.loadCACertificates(Channel.java:1618)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4059)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.sendTransactionProposal(Channel.java:3915)
+	at cn.com.dhfabric.FabricClient.invoke(FabricClient.java:173)
+	at cn.com.dhfabric.DHChaincode.invoke(DHChaincode.java:47)
+	at cn.com.dhfabric.Communication.main(Communication.java:37)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer1.org1.example.com
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	... 3 more
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+2022-05-31 19:19:15,332 - getConfigBlock for channel mychannel failed with peer peer1.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: ace26a667f0c79dfea1be1b825a080290e0e0bcee28e5c9fd0fe0225d815b61e to Peer{ id: 2, name: peer1.org1.example.com, channelName: mychannel, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer1.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer1.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer1.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+2022-05-31 19:19:15,333 - Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: ace26a667f0c79dfea1be1b825a080290e0e0bcee28e5c9fd0fe0225d815b61e to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer0.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer0.org1.example.com
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.getConfigBlock(Channel.java:858)
+	at org.hyperledger.fabric.sdk.Channel.parseConfigBlock(Channel.java:1781)
+	at org.hyperledger.fabric.sdk.Channel.loadCACertificates(Channel.java:1618)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4059)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.sendTransactionProposal(Channel.java:3915)
+	at cn.com.dhfabric.FabricClient.invoke(FabricClient.java:173)
+	at cn.com.dhfabric.DHChaincode.invoke(DHChaincode.java:47)
+	at cn.com.dhfabric.Communication.main(Communication.java:37)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: Unable to resolve host peer0.org1.example.com
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	... 3 more
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+2022-05-31 19:19:15,334 - getConfigBlock for channel mychannel failed with peer peer0.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: ace26a667f0c79dfea1be1b825a080290e0e0bcee28e5c9fd0fe0225d815b61e to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer0.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+2022-05-31 19:19:15,334 - getConfigBlock for channel mychannel failed with peer peer0.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: ace26a667f0c79dfea1be1b825a080290e0e0bcee28e5c9fd0fe0225d815b61e to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer0.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+org.hyperledger.fabric.sdk.exception.ProposalException: getConfigBlock for channel mychannel failed with peer peer0.org1.example.com.  Status FAILURE, details: Channel Channel{id: 4, name: mychannel} Sending proposal with transaction: ace26a667f0c79dfea1be1b825a080290e0e0bcee28e5c9fd0fe0225d815b61e to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=Unable to resolve host peer0.org1.example.com, cause=java.lang.RuntimeException: java.net.UnknownHostException: peer0.org1.example.com
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:399)
+	at io.grpc.internal.DnsNameResolver$Resolve.resolveInternal(DnsNameResolver.java:269)
+	at io.grpc.internal.DnsNameResolver$Resolve.run(DnsNameResolver.java:225)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.net.UnknownHostException: peer0.org1.example.com
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1324)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1277)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1193)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127)
+	at io.grpc.internal.DnsNameResolver$JdkAddressResolver.resolveAddress(DnsNameResolver.java:624)
+	at io.grpc.internal.DnsNameResolver.resolveAll(DnsNameResolver.java:367)
+	... 5 more
+}
+	at org.hyperledger.fabric.sdk.Channel.getConfigBlock(Channel.java:869)
+	at org.hyperledger.fabric.sdk.Channel.parseConfigBlock(Channel.java:1781)
+	at org.hyperledger.fabric.sdk.Channel.loadCACertificates(Channel.java:1618)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4059)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.sendTransactionProposal(Channel.java:3915)
+	at cn.com.dhfabric.FabricClient.invoke(FabricClient.java:173)
+	at cn.com.dhfabric.DHChaincode.invoke(DHChaincode.java:47)
+	at cn.com.dhfabric.Communication.main(Communication.java:37)
+2022-05-31 19:22:05,266 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 19:22:08,117 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 19:22:13,842 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 19:22:13,842 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 19:22:17,986 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 19:22:22,774 - data is <ByteString@3fb6cf60 size=1164>
+2022-05-31 19:22:25,210 - Channel Channel{id: 20, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 19:22:25,290 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 19:22:25,290 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 19:22:27,987 - Channel Channel{id: 28, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 19:22:28,060 - data is <ByteString@7b324585 size=1164>
+2022-05-31 20:02:28,324 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 20:02:30,624 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:02:30,707 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 20:02:30,707 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 20:02:33,858 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:02:34,057 - data is <ByteString@10d94f19 size=1162>
+2022-05-31 20:02:36,420 - Channel Channel{id: 20, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:02:36,567 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 20:02:36,568 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 20:02:39,340 - Channel Channel{id: 28, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:02:39,442 - data is <ByteString@3dd50f08 size=1162>
+2022-05-31 20:20:52,798 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 20:20:55,502 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:20:55,589 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 20:20:55,589 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 20:20:58,874 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:20:59,040 - data is <ByteString@68389cc8 size=1162>
+2022-05-31 20:21:01,543 - Channel Channel{id: 20, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:21:01,637 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 20:21:01,637 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 20:21:04,350 - Channel Channel{id: 28, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:21:04,435 - data is <ByteString@4f28d33 size=1162>
+2022-05-31 20:37:36,046 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 20:37:38,266 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:37:38,342 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 20:37:38,342 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 20:37:41,598 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:37:41,795 - data is <ByteString@583674ea size=1162>
+2022-05-31 20:37:44,116 - Channel Channel{id: 20, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:37:44,187 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 20:37:44,187 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 20:37:46,898 - Channel Channel{id: 28, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 20:37:47,004 - data is <ByteString@3a3f43f1 size=1162>
+2022-05-31 21:43:32,348 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 21:43:37,260 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:43:37,388 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 21:43:37,388 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 21:43:41,040 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:43:41,210 - data is <ByteString@394f66c2 size=1164>
+2022-05-31 21:43:43,602 - Channel Channel{id: 20, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:43:43,685 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 21:43:43,685 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 21:43:46,448 - Channel Channel{id: 28, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:43:46,566 - data is <ByteString@4a111a90 size=1162>
+2022-05-31 21:48:54,199 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-05-31 21:48:58,226 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:48:58,352 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 21:48:58,352 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 21:49:02,220 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:49:02,460 - data is <ByteString@64cde6fe size=1162>
+2022-05-31 21:49:04,998 - Channel Channel{id: 20, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:49:05,071 - peer0.org1.example.com invoke proposal save sucess
+2022-05-31 21:49:05,072 - peer1.org1.example.com invoke proposal save sucess
+2022-05-31 21:49:07,759 - Channel Channel{id: 28, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-05-31 21:49:07,824 - data is <ByteString@4f06f87d size=1164>

@@ -1,0 +1,350 @@
+2022-06-06 09:42:51,071 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 09:58:44,968 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 09:58:51,057 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 09:59:17,847 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 09:59:17,847 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 09:59:22,234 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 09:59:57,269 - Channel Channel{id: 12, name: mychannel} sending proposal with transaction 16b9fb6c50945604abc8b868124286943f91d1449b41a84a188b7aa6230bf501 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@32c06706[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@4ea60e89, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1971fa68, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@ff71705}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3942)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3928)
+	at cn.com.dhfabric.FabricClient.queryChaincode(FabricClient.java:211)
+	at cn.com.dhfabric.AUChaincode.query(AUChaincode.java:31)
+	at SampleCode.endObervation(SampleCode.java:199)
+	at MainWindow.actionPerformed(MainWindow.java:181)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2022-06-06 10:00:05,464 - data get error Channel Channel{id: 12, name: mychannel} sending proposal with transaction 16b9fb6c50945604abc8b868124286943f91d1449b41a84a188b7aa6230bf501 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+2022-06-06 10:01:31,442 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:01:33,235 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:01:33,442 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:01:33,442 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:01:36,241 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:01:36,411 - data is <ByteString@1ba879d2 size=14>
+2022-06-06 10:05:14,163 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:05:16,356 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:05:16,439 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:05:16,439 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:05:57,435 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:05:57,855 - data is <ByteString@7045be78 size=14>
+2022-06-06 10:08:35,763 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:08:37,664 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:08:37,762 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:08:37,762 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:08:44,420 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:08:44,917 - data is <ByteString@281703f8 size=14>
+2022-06-06 10:18:35,156 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:18:37,844 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:19:01,878 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:19:01,878 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:19:07,805 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:19:43,262 - Channel Channel{id: 12, name: mychannel} sending proposal with transaction fd1eb3d2cc700f02d35d555e7025da602a126d0a673e767168f1d96ce52ec651 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@a5c9917[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@3ae50219, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@2f89f16d, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@92b1207}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3942)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3928)
+	at cn.com.dhfabric.FabricClient.queryChaincode(FabricClient.java:211)
+	at cn.com.dhfabric.AUChaincode.query(AUChaincode.java:31)
+	at SampleCode.endObervation(SampleCode.java:199)
+	at MainWindow.actionPerformed(MainWindow.java:181)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2022-06-06 10:19:47,754 - data get error Channel Channel{id: 12, name: mychannel} sending proposal with transaction fd1eb3d2cc700f02d35d555e7025da602a126d0a673e767168f1d96ce52ec651 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+2022-06-06 10:21:04,557 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:21:06,704 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:21:06,921 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:21:06,921 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:21:13,670 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:21:14,139 - data is <ByteString@16e8acc0 size=14>
+2022-06-06 10:47:25,041 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:47:29,321 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:47:54,109 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:47:54,109 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:49:16,019 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:49:51,161 - Channel Channel{id: 12, name: mychannel} sending proposal with transaction 9e36ac38011c1fa39741044e17e88731c795de9d4c514e8e33a93a28bf3e7e32 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@38c5fb54[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@5589acc2, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@d559f78, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@5bc154f6}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3942)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3928)
+	at cn.com.dhfabric.FabricClient.queryChaincode(FabricClient.java:211)
+	at cn.com.dhfabric.AUChaincode.query(AUChaincode.java:31)
+	at SampleCode.endObervation(SampleCode.java:199)
+	at MainWindow.actionPerformed(MainWindow.java:181)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2022-06-06 10:49:55,476 - data get error Channel Channel{id: 12, name: mychannel} sending proposal with transaction 9e36ac38011c1fa39741044e17e88731c795de9d4c514e8e33a93a28bf3e7e32 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+2022-06-06 10:50:56,798 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:50:58,295 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:50:58,492 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:50:58,493 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:51:04,238 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:51:04,731 - data is <ByteString@78af8414 size=14>
+2022-06-06 10:58:38,550 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 10:58:40,570 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:59:04,982 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:59:04,982 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 10:59:11,821 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 10:59:47,272 - Channel Channel{id: 12, name: mychannel} sending proposal with transaction 5f800a6b4a27735676d68e267ebec4c2d07f02b4b1884b62dfdce5d5208cb62c to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@44156e7[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6c1e5e22, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@30046f01, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@b2c9581}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3942)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3928)
+	at cn.com.dhfabric.FabricClient.queryChaincode(FabricClient.java:211)
+	at cn.com.dhfabric.AUChaincode.query(AUChaincode.java:31)
+	at SampleCode.endObervation(SampleCode.java:199)
+	at MainWindow.actionPerformed(MainWindow.java:181)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2022-06-06 10:59:51,613 - data get error Channel Channel{id: 12, name: mychannel} sending proposal with transaction 5f800a6b4a27735676d68e267ebec4c2d07f02b4b1884b62dfdce5d5208cb62c to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+2022-06-06 11:00:37,113 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 11:00:39,513 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 11:00:39,583 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 11:00:39,583 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 11:00:42,419 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 11:00:42,585 - data is <ByteString@2a02678f size=38>
+2022-06-06 11:01:27,940 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 11:01:29,481 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 11:01:29,726 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 11:01:29,726 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 11:01:34,855 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 11:01:35,287 - data is <ByteString@45b75dd9 size=38>
+2022-06-06 14:19:14,641 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:19:17,281 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:19:41,399 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:19:41,399 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:19:49,561 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:20:24,696 - Channel Channel{id: 12, name: mychannel} sending proposal with transaction cefeb085cb69fd2bc09054fb2cd2ba86a35849cf5b6d8f877a7a898810bec8b6 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@55384ffe[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@709308a9, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@14c15db8, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@6c79f1bf}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendProposal(Channel.java:4032)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3942)
+	at org.hyperledger.fabric.sdk.Channel.queryByChaincode(Channel.java:3928)
+	at cn.com.dhfabric.FabricClient.queryChaincode(FabricClient.java:211)
+	at cn.com.dhfabric.AUChaincode.query(AUChaincode.java:31)
+	at SampleCode.endObervation(SampleCode.java:199)
+	at MainWindow.actionPerformed(MainWindow.java:181)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2348)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6539)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3324)
+	at java.awt.Component.processEvent(Component.java:6304)
+	at java.awt.Container.processEvent(Container.java:2239)
+	at java.awt.Component.dispatchEventImpl(Component.java:4889)
+	at java.awt.Container.dispatchEventImpl(Container.java:2297)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4904)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4535)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4476)
+	at java.awt.Container.dispatchEventImpl(Container.java:2283)
+	at java.awt.Window.dispatchEventImpl(Window.java:2746)
+	at java.awt.Component.dispatchEvent(Component.java:4711)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:760)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:84)
+	at java.awt.EventQueue$4.run(EventQueue.java:733)
+	at java.awt.EventQueue$4.run(EventQueue.java:731)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:74)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:730)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:205)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2022-06-06 14:20:31,520 - data get error Channel Channel{id: 12, name: mychannel} sending proposal with transaction cefeb085cb69fd2bc09054fb2cd2ba86a35849cf5b6d8f877a7a898810bec8b6 to Peer{ id: 11, name: peer1.org2.example.com, channelName: mychannel, url: grpcs://peer1.org2.example.com:10051} failed because of timeout(35000 milliseconds) expiration
+2022-06-06 14:24:59,176 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:25:00,980 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:25:01,244 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:25:01,245 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:25:08,498 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:25:08,926 - data is <ByteString@fae9700 size=14>
+2022-06-06 14:26:58,397 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:26:59,992 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:27:00,186 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:27:00,186 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:27:06,488 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:27:06,946 - data is <ByteString@5787dc94 size=14>
+2022-06-06 14:30:03,403 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:30:05,004 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:30:05,249 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:30:05,249 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:30:11,089 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:30:11,530 - data is <ByteString@438479d1 size=14>
+2022-06-06 14:33:08,340 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:33:10,597 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:33:10,825 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:33:10,826 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:33:17,445 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:33:17,912 - data is <ByteString@6efae39 size=14>
+2022-06-06 14:33:38,161 - Channel Channel{id: 19, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:33:38,446 - data is <ByteString@f83e3c9 size=15>
+2022-06-06 14:35:00,506 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:35:03,005 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:35:03,203 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:35:03,203 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:35:08,715 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:35:09,133 - data is <ByteString@3e2953e4 size=14>
+2022-06-06 14:35:18,312 - Channel Channel{id: 19, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:35:18,615 - data is <ByteString@76ac9289 size=15>
+2022-06-06 14:37:03,546 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2022-06-06 14:37:05,088 - Channel Channel{id: 4, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:37:05,330 - peer0.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:37:05,331 - peer1.org1.example.com invoke proposal loadTarget sucess
+2022-06-06 14:37:09,356 - Channel Channel{id: 12, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:37:09,823 - data is <ByteString@2be4e2e3 size=14>
+2022-06-06 14:37:12,692 - Channel Channel{id: 19, name: mychannel} eventThread started shutdown: false  thread: null 
+2022-06-06 14:37:13,038 - data is <ByteString@28f0b275 size=15>
